@@ -1,0 +1,672 @@
+@import "mixins";
+* {
+    @include mpb;
+}
+
+body {
+    @include mpb;
+    overflow-x: hidden;
+}
+
+nav {
+    padding-top: 30px;
+    position: sticky;
+    top: -10px;
+    background: rgba(255, 255, 255, .4);
+    backdrop-filter: blur(3px);
+    @include flex(no);
+    z-index: 3;
+    justify-content: space-between;
+    header {
+        width: 45%;
+        padding: 0px 0px 0px 70px;
+        h1 {
+            @include fsize(30);
+            @include bold;
+        }
+    }
+    &>ul {
+        width: 55%;
+        z-index: inherit;
+        @include flex(no);
+        &>li {
+            list-style-type: none;
+            padding-left: 30px;
+            @include light;
+            width: auto;
+            z-index: 3;
+            @include transition;
+            div.text {
+                @include lang;
+                cursor: pointer;
+                padding: 4px 6px;
+                border-radius: 5px;
+                @include border($purple);
+                i {
+                    padding: 0px 8px 0px 8px;
+                    @include fsize(25);
+                    @include purple(.9, c);
+                }
+            }
+            ul {
+                box-shadow: 0px 0px 12px rgba(0, 0, 0, .08);
+                position: absolute;
+                @include flex(yes);
+                z-index: inherit;
+                background: white;
+                @include transition;
+                &:first-child {
+                    right: 30%;
+                }
+                li {
+                    list-style-type: none;
+                    @include lang;
+                    @include light;
+                    cursor: pointer;
+                    @include fsize(10);
+                    padding: 10px 23px;
+                    a {
+                        @include link;
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+            &>a {
+                @include link;
+                padding: 5px 38px;
+                border: 1.5px solid $purple;
+                border-radius: 30px;
+                @include fsize(10);
+                box-sizing: border-box;
+                @include transition;
+                @include light;
+                &:hover {
+                    border: none;
+                    @include fsize(15);
+                    @include purple(.9, b);
+                    color: white;
+                }
+            }
+            ul.langdropdown {
+                @include transition;
+                z-index: inherit;
+                li {
+                    width: 100%;
+                    &:hover {
+                        @extend .liactive;
+                    }
+                }
+            }
+        }
+        button {
+            @include button;
+            @include fsize(22);
+            @include transition;
+            @include light;
+            cursor: pointer;
+            &:last-child {
+                &:hover {
+                    transform: scale(1.2);
+                    @include purple(1, c);
+                }
+            }
+            &>input {
+                padding: 13px 10px;
+                @include transition;
+                border-radius: 5px;
+                @include button;
+                background-color: white;
+                box-shadow: 0px 0px 14px rgba(0, 0, 0, .03);
+                @include fsize(4);
+                @include light;
+                &:focus {
+                    border: 2px solid $purple;
+                }
+            }
+        }
+    }
+}
+
+div.cover {
+    @include flex(no);
+    height: 80vh;
+    div.home {
+        @include flex(no);
+        width: 90%;
+        height: 100%;
+        padding-top: 40px;
+        div.left {
+            width: 55%;
+            // z-index: -1;
+            height: 100%;
+            small {
+                @include bold;
+                @include fsize(15);
+                font-weight: 600;
+            }
+            h1 {
+                @include bold;
+                width: 90%;
+                // @include border(green);
+                @include fsize(37);
+            }
+            p {
+                width: 95%;
+                // @include border(green);
+                line-height: 45px;
+                margin-bottom: 20px;
+                @include fsize(11);
+            }
+            a {
+                @include link;
+                padding: 10px 30px;
+                border: 1.5px solid $purple;
+                border-radius: 30px;
+                @include fsize(7);
+                box-sizing: border-box;
+                @include transition;
+                @include light;
+                &:hover {
+                    border: none;
+                    @include fsize(15);
+                    @include purple(.9, b);
+                    color: white;
+                }
+            }
+        }
+        div.right {
+            width: 45%;
+            height: 100%;
+            z-index: -2;
+            overflow: hidden;
+            img {
+                transform: scale(.9);
+                height: 100%;
+            }
+        }
+    }
+}
+
+div.infoabout {
+    width: 100vw;
+    @include flex(no);
+    &_main {
+        width: 80%;
+        @include purple(.4, b);
+        border-radius: 7px;
+        height: auto;
+        padding: 30px 0px;
+        color: white;
+        @include flex(yes);
+        justify-content: unset;
+        &>div {
+            width: 98%;
+            @include flex(no);
+            &>div {
+                width: 33.3%;
+                @include bold;
+                &>div {
+                    @include flex(no);
+                    justify-content: space-between;
+                    width: 80%;
+                    &>div {
+                        &:first-child {
+                            width: 17%;
+                        }
+                        &:last-child {
+                            width: 93%;
+                        }
+                        i {
+                            @include fsize(30);
+                            position: relative;
+                        }
+                        h3 {
+                            @include fsize(10);
+                        }
+                    }
+                }
+                p {
+                    padding-left: 55px;
+                    @include fsize(5);
+                    width: 95%;
+                }
+            }
+        }
+    }
+}
+
+div.readercause {
+    @include flex(yes);
+    padding: 50px 0px;
+    width: 100%;
+    h2 {
+        @include light;
+        @include fsize(30);
+        font-weight: 200;
+    }
+    &_main {
+        margin-top: 30px;
+        width: 80%;
+        @include flex(no);
+        justify-content: space-between;
+        div.reader {
+            width: 32%;
+            @include flex(yes);
+            @include border($purple);
+            border-radius: 10px;
+            background: white;
+            // box-shadow: 0px 0px 12px rgba(0, 0, 0, .08);
+            padding: 30px 0px;
+            cursor: pointer;
+            div.head {
+                @include flex(yes);
+                span {
+                    @include fsize(60);
+                    @include purple(1, c);
+                }
+                h3 {
+                    @include bold;
+                    @include fsize(20);
+                    line-height: 70px;
+                }
+            }
+            p {
+                text-align: center;
+                width: 90%;
+                line-height: 30px;
+                @include fsize(12);
+            }
+        }
+    }
+}
+
+div.blogger {
+    @include flex(yes);
+    width: 100%;
+    h2 {
+        @include bold;
+        @include fsize(25);
+        line-height: 120px;
+        font-weight: 200;
+    }
+    &_main {
+        @include flex(no);
+        flex-wrap: wrap;
+        align-items: unset;
+        justify-content: space-between;
+        width: 80%;
+        div#blog {
+            &_1,
+            &_5 {
+                margin-top: 0px;
+            }
+            &_2,
+            &_6 {
+                margin-top: 40px;
+            }
+            &_3,
+            &_7 {
+                margin-top: 80px;
+            }
+            &_4,
+            &_8 {
+                margin-top: 120px;
+            }
+        }
+        div.blogrocks {
+            width: 21%;
+            border: 1.5px solid $purple;
+            border-radius: 5px;
+            margin-top: 20px;
+            height: 32vh;
+            cursor: pointer;
+            @include transition;
+            overflow: hidden;
+            &_main {
+                @include flex(yes);
+                justify-content: unset;
+                width: 100%;
+                padding-top: 50px;
+                height: 100%;
+                span {
+                    @include fsize(60);
+                    @include purple(1, c);
+                }
+                small {
+                    @include fsize(10);
+                    width: 90%;
+                    text-align: center;
+                    padding-top: 30px;
+                    @include light;
+                }
+            }
+            &_hover {
+                width: 100%;
+                height: 100%;
+                position: relative;
+                bottom: 0%;
+                @include flex(no);
+                color: white;
+                @include transition;
+                @include purple(.9, b);
+                visibility: hidden;
+                p {
+                    text-align: center;
+                    @include fsize(10);
+                    @include light;
+                }
+            }
+            &:hover #hover {
+                bottom: 100%;
+                visibility: visible;
+            }
+        }
+    }
+}
+
+div.move {
+    @include flex(no);
+    margin: 60px 0px;
+    p {
+        @include tcolor;
+        @include light;
+        @include fsize(35);
+    }
+}
+
+div.stats {
+    @include flex(no);
+    &_main {
+        @include flex(no);
+        justify-content: space-between;
+        width: 80%;
+        // @include border(green);
+        &>div {
+            width: 32%;
+            @include flex(yes);
+            // @include border(blue);
+            @include light;
+            h2 {
+                @include purple(1, c);
+                @include fsize(60);
+            }
+            small {
+                @include fsize(25);
+            }
+        }
+    }
+}
+
+section.blogpost {
+    div.card {
+        div.card-header {
+            h4 {
+                font-weight: 200;
+                @include fsize(28);
+                @include light;
+                padding: 50px 0px 20px 0px;
+                text-align: center;
+            }
+        }
+        &-content {
+            div.card-body {
+                div.swiper-container {
+                    // @include border(blue);
+                    padding: 25px 0px;
+                    div.swiper-wrapper {
+                        div.swiper-slide {
+                            height: auto;
+                            // @include border(green);
+                            width: 20%;
+                            // margin: 0px 0px 0px 0px;
+                            @include flex(yes);
+                            div.blogpost {
+                                width: 94%;
+                                // @include border(blue);
+                                padding: 10px 0px;
+                                background: white;
+                                box-shadow: 0px 0px 60px rgba(0, 0, 255, .08);
+                                &_boxmain {
+                                    @include flex(no);
+                                    align-items: unset;
+                                    img {
+                                        transform: scale(.9);
+                                        border-radius: 5px;
+                                    }
+                                    div.text {
+                                        padding: 10px 0px 0px 0px;
+                                        h3 {
+                                            @include light;
+                                            font-weight: 200;
+                                            line-height: 40px;
+                                            @include fsize(13);
+                                        }
+                                        p {
+                                            @include fsize(8);
+                                            @include light;
+                                            a {
+                                                @include link;
+                                                @include purple(1, c);
+                                            }
+                                        }
+                                    }
+                                }
+                                div.profile {
+                                    @include flex(no);
+                                    align-items: unset;
+                                    div.image {
+                                        width: 30%;
+                                        img {
+                                            transform: scale(.8);
+                                        }
+                                    }
+                                    &_main {
+                                        width: 35%;
+                                        @include bold;
+                                        padding-top: 20px;
+                                        h4 {
+                                            @include fsize(11);
+                                            line-height: 15px;
+                                        }
+                                        i {
+                                            @include fsize(7);
+                                            line-height: 50px;
+                                        }
+                                        p {
+                                            @include fsize(6);
+                                        }
+                                    }
+                                    div.section {
+                                        width: 25%;
+                                        @include flex(no);
+                                        justify-content: unset;
+                                        button {
+                                            @include button;
+                                            @include border($purple);
+                                            border-radius: 25px;
+                                            padding: 6px 32px;
+                                            @include light;
+                                            @include fsize(7);
+                                            @include transition;
+                                            &:hover {
+                                                transform: scale(1.1);
+                                                color: white;
+                                                border: none;
+                                                @include purple(.8, b);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+div.faq {
+    @include flex(no);
+    padding: 50px 0px;
+    justify-content: space-between;
+    align-items: unset;
+    height: auto;
+    div.image {
+        @include flex(no);
+        width: 45%;
+        align-items: unset;
+        img {
+            transform: scale(.9);
+        }
+    }
+    &_mainnews {
+        width: 55%;
+        h3 {
+            @include bold;
+            @include fsize(25);
+            font-weight: 200;
+            line-height: 90px;
+            i {
+                font-style: normal;
+                border-bottom: 4px solid rgba(173, 216, 230, 0.8);
+            }
+        }
+        &_slider {
+            div.question {
+                margin: 10px 0px;
+                width: 85%;
+                padding: 0px 0px 10px 0px;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+                &_main {
+                    width: 95%;
+                    @include flex(no);
+                    justify-content: space-between;
+                    h5 {
+                        @include fsize(15);
+                        font-weight: 200;
+                        @include light;
+                    }
+                    button {
+                        @include button;
+                        border-radius: 2px;
+                        padding: 7px 11px;
+                        @include fsize(22);
+                        cursor: pointer;
+                        color: rgba(black, .7);
+                        @include purple(.3, b);
+                    }
+                }
+                p {
+                    @include fsize(10);
+                    @include light;
+                    width: 80%;
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+footer {
+    background: linear-gradient(180deg, rgba(0, 0, 255, 0.03) 2.88%, rgba(0, 0, 255, 0.15) 100%);
+    @include flex(yes);
+    padding: 30px 0px;
+    div.footer_main {
+        width: 95%;
+        @include flex(no);
+        justify-content: space-between;
+        align-items: unset;
+        &>div {
+            h4 {
+                @include fsize(16);
+                @include bold;
+                line-height: 50px;
+                font-weight: 200;
+            }
+            &>ul {
+                li {
+                    list-style-type: none;
+                    line-height: 35px;
+                    a {
+                        @include link;
+                        @include light;
+                        @include transition;
+                        @include fsize(10);
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                        i {
+                            padding-right: 10px;
+                        }
+                    }
+                }
+            }
+            &:first-child {
+                width: 50%;
+                h4 {
+                    @include bold;
+                    font-weight: 200;
+                    line-height: 60px;
+                    @include fsize(20);
+                }
+                p {
+                    @include light;
+                    width: 93%;
+                    @include fsize(8);
+                    color: rgba(#000000, .6);
+                }
+                div.links {
+                    // @include border(blue);
+                    width: 20%;
+                    @include flex(no);
+                    justify-content: space-between;
+                    margin-top: 15px;
+                    a {
+                        @include fsize(20);
+                        @include transition;
+                        @include link;
+                        &:hover {
+                            transform: scale(1.1);
+                            @include purple(1, c);
+                        }
+                    }
+                }
+            }
+            &:nth-child(2) {
+                width: 25%;
+            }
+            &:last-child {
+                width: 25%;
+            }
+        }
+    }
+    div.footer_bottom {
+        padding: 20px 0px 0px 0px;
+        h4 {
+            @include light;
+            text-align: center;
+            @include fsize(22);
+        }
+        ul {
+            @include flex(no);
+            justify-content: space-between;
+            li {
+                list-style-type: none;
+                padding: 10px 15px 0px 0px;
+                a {
+                    @include link;
+                    @include transition;
+                    @include light;
+                    font-weight: bold;
+                    @include fsize(10);
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}

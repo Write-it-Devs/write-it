@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./homepage.css" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./homeresponsive.css">
+    <link rel="stylesheet" href="../css/fontawesome-free-5.15.1-web/css/all.min.css">
+    <link rel="stylesheet preconnect" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/01854de2cd.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="../app-assets/images/ico/favicon.ico">
+    <link rel="stylesheet" href="../vendor/aos.css" />
+    <title>Notifications - Write-it</title>
+</head>
+
+<body id="body">
+    <div class="whole">
+        <div class="left">
+            <div class="leftnav">
+                <div class="avatar">
+                    <img :src="userImg" :alt="userName" :title="userName" />
+                </div>
+                <div class="list">
+                    <bar-add :bars="bars"></bar-add>
+                </div>
+                <div class="state">
+                    <img :src="userCountry" :alt="userCountryName" :title="userCountryName" />
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="iconses">
+                <div class="search">
+                    <i class="fa fa-search fa-lg"></i>
+                    <input type="search" placeholder="Search for blogs,niches and writers">
+                </div>
+                <div class="notifications" id="actives" @click="changeNotify">
+                    <i class="fas fa-bell fa-lg" aria-hidden="true"></i>
+                    <p>Notifications</p>
+                </div>
+                <div class="language">
+                    <div class="text" @click="langList">
+                        <img :src="imgSource" :alt="imgSourceAlt">
+                        <p id="langText">{{ langtext }}</p>
+                        <i :class="langChange"></i>
+                    </div>
+                    <ul v-if="langVisible" class="langdropdown">
+                        <lang-list :languages="languages" :langtest="changeLanguage"></lang-list>
+                    </ul>
+                </div>
+                <div class="settings">
+                    <i class="fa fa-cog fa-lg" @click="setting"></i>
+                    <div class="settings_main" v-if="settinngVisible">
+                        <ul class="bono">
+                            <li @click="modeChange">{{ mode }} <i :class="toggle"></i></li>
+                            <li v-if="toggleChange" style="display:none;"></li>
+                            <li>Log out</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="logo">
+                    <img src="../app-assets/images/ico/favicon.ico" alt="logo">
+                </div>
+            </div>
+            <div class="mains">
+                <notification-add :numbers="numbers" :laternotify="laternotify" :notify="notify" :ndelete="ndelete" :all="all" :deleted="deleted" @notify-all="notifyall" @notify-delete="notifydelete" :allactive="allactive" :redactive="redactive"></notification-add>
+            </div>
+        </div>
+        <div class="end">
+            <div class="search">
+                <i class="fas fa-search"></i>
+                <input type="search" placeholder="Search for writers">
+            </div>
+            <div class="writers">
+                <h3>Trending writers for the day</h3>
+                <writer-img :writers="writers"></writer-img>
+            </div>
+            <div class="trend">
+                <h3>Top trending topics</h3>
+                <topic-add :topics="topics"></topic-add>
+            </div>
+        </div>
+    </div>
+    <script src="../vendor/vue.js"></script>
+    <script src="../vendor/aos.js"></script>
+    <script src="./home.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>

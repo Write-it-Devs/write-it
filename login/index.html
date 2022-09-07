@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=0,maximum-scale=1">
+    <link rel="stylesheet" href="../login/style.css">
+    <link rel="stylesheet" href="../login/responsive.css">
+    <link rel="stylesheet" href="../login/other.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/01854de2cd.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+    <script src="../vendor/vue.js"></script>
+    <title>Login in</title>
+</head>
+
+<body id="body">
+    <div class="main">
+        <div class="account" @click="changeacct">
+            <p>READER ACCOUNT</p>
+            <i :class="angleclass"></i>
+            <div class="account_main" v-if="acctVisible">
+                <account-in></account-in>
+            </div>
+        </div>
+        <div class="form">
+            <h2>LOGIN TO YOUR READER ACCOUNT</h2>
+            <form action="homepage.html" method="post">
+                <sign-in></sign-in>
+            </form>
+            <button><a href="#"><i class="fab fa-google"></i> Sign in with Google</a></button>
+            <p>Don't have an account? <a href="signup.html">SIGN UP</a></p>
+        </div>
+    </div>
+    <div class="picture">
+        <img src="../img/gal.jpeg" alt="person">
+    </div>
+    <script src="./login.js"></script>
+</body>
+
+</html>

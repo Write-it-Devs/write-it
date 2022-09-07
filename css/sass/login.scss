@@ -1,0 +1,69 @@
+@import "mixins";
+body {
+    @include mpb;
+}
+
+div.main {
+    div.account {
+        @include border(black);
+        padding: 15px 20px;
+        margin: 10px 0px 35px 0px;
+        border-radius: 5px;
+        @include transition;
+        @include flex(no);
+        cursor: pointer;
+        p {
+            @include fsize(10);
+        }
+        i {
+            @include fsize(10);
+            padding-left: 10px;
+        }
+        &_main {
+            @include transition;
+            position: absolute;
+            background: white;
+            top: 10%;
+            box-shadow: 0px 0px 12px rgba(black, .08);
+            @include flex(yes);
+            ul {
+                li {
+                    list-style-type: none;
+                    text-align: center;
+                    padding: 15px 10px;
+                    &:hover {
+                        background: rgba(black, .01);
+                    }
+                    a {
+                        @include fsize(7);
+                        // padding: 10px 10px;
+                        @include link;
+                    }
+                }
+            }
+        }
+    }
+}
+
+form {
+    select#interests {
+        margin: 10px 0px 20px 20px;
+        padding: 5px 5px;
+        cursor: pointer;
+        @include fsize(10);
+    }
+    input {
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        &[type=number] {
+            -moz-appearance: textfield;
+        }
+    }
+    div.flex-flow {
+        @include flex(no);
+        justify-content: space-between;
+    }
+}

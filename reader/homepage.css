@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: quicksand;
+}
+
+@font-face {
+    font-family: quicksand;
+    src: url("./Quicksand-VariableFont_wght.ttf");
+}
+
+body {
+    background-color: white;
+    overflow-x: hidden;
+}
+
+div.whole div.left {
+    height: 100vh;
+    position: fixed;
+}
+
+div.whole div.left div.leftnav {
+    height: inherit;
+    width: inherit;
+    display: block;
+    justify-content: center;
+    align-items: center;
+}
+
+div.whole div.left div.leftnav div.avatar,
+div.whole div.left div.leftnav div.state {
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5%;
+}
+
+div.whole div.left div.leftnav div.avatar img,
+div.whole div.left div.leftnav div.state img {
+    border-radius: 50%;
+    height: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+div.whole div.left div.leftnav div.bars {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+div.whole div.right {
+    height: inherit;
+}
+
+div.whole div.right div.iconses {
+    height: auto;
+    width: 100%;
+    display: flex;
+    padding: 10px 0px;
+}
+
+div.whole div.right div.iconses div.search {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.whole div.right div.iconses div.search i {
+    margin-right: 20px;
+}
+
+div.whole div.right div.iconses div.search input[type="search"] {
+    background-color: transparent;
+    border: 0px solid transparent;
+    padding: 3px;
+    font-size: 1.1em;
+}
+
+div.whole div.right div.iconses div.notifications {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.whole div.right div.iconses div.notifications i {
+    margin-right: 20px;
+}
+
+div.whole div.right div.iconses div.settings {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 20px;
+}
+
+div.whole div.right nav.navlist ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    list-style-position: inside;
+}
+
+div.whole div.right nav.navlist ul li {
+    padding: 7px 0px;
+}
+
+div.mains {
+    height: auto;
+    width: 100%;
+}

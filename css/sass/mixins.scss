@@ -1,0 +1,104 @@
+@mixin mp {
+    margin: 0;
+    padding: 0;
+}
+
+@mixin mpb {
+    @include mp;
+    box-sizing: border-box;
+}
+
+@mixin button {
+    background: none;
+    border: none;
+    outline: none;
+}
+
+@mixin purple($level, $color) {
+    @if $color=="c" {
+        color: rgba(0, 0, 255, $level);
+    }
+    @else if $color=="b" {
+        background-color: rgba(0, 0, 255, $level);
+    }
+    @else {
+        color: rgba(0, 0, 255, $level);
+    }
+}
+
+@mixin border($color) {
+    border: 1px solid $color;
+}
+
+@mixin link {
+    text-decoration: none;
+    color: black;
+}
+
+@mixin flex($what) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @if $what=="yes" {
+        flex-direction: column;
+    }
+}
+
+@mixin transition {
+    transition: all 0.5s ease;
+}
+
+@mixin fsize($size) {
+    font-size: (10 + $size) * 1px;
+}
+
+@mixin lang {
+    @include flex(no);
+    img {
+        transform: scale(.6);
+    }
+    p {
+        @include fsize(10);
+    }
+}
+
+@mixin bold {
+    font-family: boldd;
+}
+
+$purple: rgba(0, 0, 255, 1);
+@mixin light {
+    font-family: light;
+}
+
+@mixin tcolor {
+    text-transform: uppercase;
+    text-align: center;
+    background: linear-gradient(to right, $purple, rgba($purple, .5), $purple, rgba($purple, .5));
+    -webkit-background-clip: text;
+    color: transparent;
+    transition: all 0.3s ease;
+}
+
+@mixin tcolorh {
+    transform: skewX(15deg) skewY(2deg);
+    text-shadow: 0rem 0rem 2rem rgba(black, 0.08);
+}
+
+@font-face {
+    font-family: light;
+    src: url("./fonts/light.ttf");
+}
+
+@font-face {
+    font-family: boldd;
+    src: url("./fonts/bold.ttf");
+}
+
+.liactive {
+    background: rgba(128, 128, 128, .05);
+}
+
+// $b: 6px;
+// $blur: blur(5px);
+// $rect: inset(0);

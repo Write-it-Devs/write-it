@@ -1,0 +1,701 @@
+@import "mixins";
+body {
+    @include mpb;
+    background: rgba(grey, .03);
+}
+
+div.whole {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    // padding-top: 20px;
+    &>div.left {
+        padding-top: 20px;
+        background: white;
+        width: 6vw;
+        div.leftnav {
+            div.list {
+                height: 78%;
+                @include flex(yes);
+                div.bars {
+                    height: 12%;
+                    i {
+                        a {
+                            @include link;
+                            @include transition;
+                            @include fsize(25);
+                            &:hover {
+                                transform: scale(1.1);
+                                @include purple(.8, c);
+                            }
+                        }
+                        .active {
+                            @include purple(.8, c);
+                        }
+                    }
+                }
+            }
+            div.avatar {
+                img {
+                    transform: scale(.9);
+                }
+            }
+            div.state {
+                img {
+                    transform: scale(.7);
+                    cursor: pointer;
+                    &:hover {
+                        transform: scale(.9);
+                    }
+                }
+            }
+        }
+    }
+    div.right {
+        padding-top: 20px;
+        width: 72vw;
+        @include flex(yes);
+        align-items: center;
+        position: absolute;
+        left: 7%;
+        nav.navlist {
+            width: 70%;
+            margin: 10px 0px;
+            @include flex(no);
+            ul {
+                li {
+                    padding-left: 30px;
+                    @include fsize(12);
+                    cursor: pointer;
+                    @include transition;
+                    @include qlight;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+        div.iconses {
+            @include flex(no);
+            width: 80%;
+            // @include border(blue);
+            div.search {
+                // @include border(green);
+                width: 35%;
+                i {
+                    color: rgba(128, 128, 128, 0.4);
+                    margin-right: 10px;
+                    @include fsize(20);
+                }
+                input {
+                    width: 18vw;
+                    // @include border(green);
+                    padding: 12px 4px;
+                    @include fsize(20);
+                    &::placeholder {
+                        color: rgba(128, 128, 128, 0.4);
+                    }
+                    &:focus {
+                        border: none;
+                        outline: none;
+                    }
+                }
+            }
+            div.notifications {
+                color: grey;
+                @include transition;
+                width: 25%;
+                i {
+                    @include fsize(25);
+                    margin-right: 12px;
+                    cursor: pointer;
+                }
+                p {
+                    @include qlight;
+                    cursor: pointer;
+                    @include fsize(13);
+                }
+                &:hover {
+                    transform: scale(1.1);
+                    @include purple(.9, c);
+                }
+            }
+            #actives {
+                @include purple(.9, c);
+            }
+            div.settings {
+                width: 10%;
+                @include flex(no);
+                i {
+                    @include fsize(25);
+                    color: rgba(128, 128, 128, 0.9);
+                    cursor: pointer;
+                }
+                &_main {
+                    @include transition;
+                    ul {
+                        right: 17%;
+                        top: 4%;
+                        padding: 10px 5px;
+                        @include list;
+                        li {
+                            @include listMain;
+                            i {
+                                @include fsize(10);
+                                padding-left: 8px;
+                            }
+                        }
+                    }
+                    .others {
+                        top: 13%;
+                    }
+                    .bono {
+                        top: 6%;
+                    }
+                }
+            }
+            div.language {
+                // @include border(red);
+                width: 15%;
+                z-index: 5;
+                div.text {
+                    @include flex(no);
+                    @include border(black);
+                    padding: 7px 5px;
+                    border-radius: 3px;
+                    cursor: pointer;
+                    img {
+                        transform: scale(.7);
+                    }
+                    p {
+                        @include qlight;
+                        @include fsize(11);
+                    }
+                    i {
+                        @include fsize(10);
+                        padding-left: 10px;
+                    }
+                }
+                ul {
+                    @include list;
+                    @include transition;
+                    li {
+                        @include listMain;
+                        width: 100%;
+                        padding: 10px 20px;
+                        &:hover {
+                            @extend .liactive;
+                        }
+                    }
+                }
+            }
+            div.logo {
+                // @include border(brown);
+                // @include flex(no);
+                width: 10%;
+                img {
+                    transform: scale(1.3);
+                }
+            }
+        }
+        div.mains {
+            width: 100%;
+            @include flex(no);
+            // z-index: -1;
+            justify-content: space-between;
+            div.box {
+                width: 99%;
+                @include flex(no);
+                flex-wrap: wrap;
+                div.boxup {
+                    margin: 10px 0px;
+                    width: 49%;
+                    div.topnav {
+                        width: 85%;
+                        // @include border(blue);
+                        @include flex(no);
+                        justify-content: space-between;
+                        div.postavatar {
+                            width: 15%;
+                            img {
+                                transform: scale(.8);
+                            }
+                        }
+                        div.postname {
+                            width: 60%;
+                            p {
+                                @include qlight;
+                                @include fsize(15);
+                            }
+                        }
+                        div.posttime {
+                            width: 30%;
+                            small {
+                                @include qlight;
+                                @include fsize(10);
+                            }
+                        }
+                    }
+                    div.content {
+                        width: 85%;
+                        div.postimage {
+                            img {
+                                width: 100%;
+                                height: 40vh;
+                            }
+                        }
+                        h2 {
+                            padding: 10px 0px;
+                            font-weight: 200;
+                            @include qlight;
+                            @include fsize(16);
+                        }
+                    }
+                    div.postcontent {
+                        width: 80%;
+                        article {
+                            @include fsize(9);
+                            @include qlight;
+                            a {
+                                @include link;
+                                @include transition;
+                                @include purple(.9, c);
+                                &:hover {
+                                    text-decoration: underline;
+                                }
+                            }
+                        }
+                        div.bottom {
+                            margin-top: 20px;
+                            @include flex(no);
+                            justify-content: space-between;
+                            &_left {
+                                // @include border(green);
+                                width: 32%;
+                                @include flex(no);
+                                justify-content: space-between;
+                                i {
+                                    @include fsize(30);
+                                    cursor: pointer;
+                                    @include transition;
+                                    &:hover {
+                                        @include iconhover;
+                                    }
+                                }
+                                .active {
+                                    @include purple(.8, c);
+                                }
+                                button {
+                                    margin-left: 5px;
+                                    @include button;
+                                    background: rgba(grey, .1);
+                                    border-radius: 5px;
+                                    @include qlight;
+                                    @include fsize(7);
+                                    padding: 12px 15px;
+                                }
+                            }
+                            &_right {
+                                width: 40%;
+                                @include flex(no);
+                                justify-content: space-between;
+                                p {
+                                    @include qlight;
+                                    @include fsize(7);
+                                }
+                                i {
+                                    @include fsize(25);
+                                    cursor: pointer;
+                                    &:hover {
+                                        @include iconhover;
+                                    }
+                                }
+                                .active {
+                                    @include purple(.8, c);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            div.notify {
+                width: 90%;
+                padding-top: 20px;
+                border-radius: 5px;
+                height: auto;
+                &_today,
+                &_earlier,
+                &_delete {
+                    box-shadow: 0px 0px 12px rgba(black, .04);
+                    background: white;
+                    width: 100%;
+                    border-radius: 5px;
+                    margin: 30px 0px;
+                }
+                h1 {
+                    @include bold;
+                    @include qlight;
+                    font-weight: 100;
+                    @include fsize(27);
+                }
+                h3 {
+                    @include qlight;
+                    font-weight: 100;
+                    @include fsize(18);
+                    border-bottom: 1px solid rgba(128, 128, 128, 0.1);
+                    padding: 25px 15px;
+                    // margin-bottom: 15px;
+                }
+                &>ul {
+                    @include flex(no);
+                    justify-content: space-between;
+                    width: 25%;
+                    margin: 14px 0px;
+                    &>li {
+                        list-style-type: none;
+                        @include qlight;
+                        cursor: pointer;
+                        display: inline-block;
+                        font-weight: 100;
+                        @include fsize(15);
+                        @include transition;
+                        padding-bottom: 14px;
+                        // @include border(blue);
+                        button {
+                            @include button;
+                            @include qlight;
+                            border-radius: 3px;
+                            padding: 5px 10px;
+                            color: white;
+                            @include fsize(11);
+                            @include purple(.6, b);
+                            margin: 0px 0px 0px 7px;
+                        }
+                        .deleted {
+                            background: $red;
+                        }
+                        &:nth-child(1):hover {
+                            border-bottom: 2px solid rgba($purple, .8);
+                        }
+                        &:last-child:hover {
+                            border-bottom: 2px solid $red;
+                        }
+                    }
+                    .redactive {
+                        border-bottom: 2px solid $red;
+                    }
+                    .allactive {
+                        border-bottom: 2px solid rgba($purple, .8);
+                    }
+                }
+                &_box {
+                    padding: 10px 15px;
+                    @include flex(no);
+                    justify-content: space-between;
+                    @include transition;
+                    cursor: pointer;
+                    div.image {
+                        width: 6%;
+                        @include flex(no);
+                        justify-content: flex-end;
+                        img {
+                            transform: scale(.8);
+                        }
+                    }
+                    div.text {
+                        width: 72%;
+                        padding: 3px 0px;
+                        p {
+                            @include fsize(10);
+                            @include qlight;
+                            font-weight: 500;
+                            line-height: 30px;
+                            a {
+                                text-decoration: none;
+                                @include transition;
+                                @include purple(.9, c);
+                                &:hover {
+                                    text-decoration: underline;
+                                }
+                            }
+                        }
+                        small {
+                            @include qlight;
+                            @include fsize(5);
+                        }
+                    }
+                    div.delete {
+                        @include flex(no);
+                        align-items: unset;
+                        width: 20%;
+                        i {
+                            @include fsize(25);
+                            color: red;
+                            cursor: pointer;
+                        }
+                    }
+                    &:hover {
+                        @include bhover;
+                    }
+                }
+            }
+        }
+        div.bookmark {
+            display: block;
+            margin: 10px 0px;
+            &>h1 {
+                @include qlight;
+                padding-left: 15px;
+                @include fsize(20);
+            }
+            nav.bookmark {
+                // @include border(green);
+                justify-content: flex-start;
+                ul {
+                    li {
+                        padding-left: 15px;
+                    }
+                }
+            }
+        }
+        div.subscribe {
+            // @include border(green);
+            margin: 10px 0px;
+            width: 85%;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0px 0px 12px rgba(black, .04);
+            h3 {
+                @include qlight;
+                @include fsize(22);
+                font-weight: 200;
+                padding: 20px 12px;
+                margin-bottom: 15px;
+                border-bottom: 1px solid rgba(grey, .06);
+            }
+            &_main {
+                div.subscribe_box {
+                    padding: 10px 12px;
+                    @include flex(no);
+                    // width: 90%;
+                    justify-content: space-between;
+                    align-items: unset;
+                    div.image {
+                        width: 10%;
+                        @include flex(no);
+                    }
+                    div.text {
+                        padding: 7px 0px;
+                        width: 70%;
+                        a {
+                            @include link;
+                            @include qlight;
+                            @include fsize(11);
+                            line-height: 30px;
+                            b {
+                                @include fsize(9);
+                                padding-left: 8px;
+                                font-weight: 200;
+                            }
+                        }
+                        summary {
+                            @include qlight;
+                            @include fsize(7);
+                            width: 90%;
+                        }
+                    }
+                    div.sub {
+                        width: 20%;
+                        @include flex(no);
+                        button {
+                            cursor: pointer;
+                            @include button;
+                            @include purple(.6, b);
+                            color: white;
+                            padding: 12px 22px;
+                            @include qlight;
+                            border-radius: 30px;
+                            @include fsize(6);
+                            @include transition;
+                            &:hover {
+                                transform: scale(1.1);
+                            }
+                        }
+                        .active {
+                            @include border($purple);
+                            color: black;
+                            background: none;
+                        }
+                    }
+                    &:hover {
+                        @include bhover;
+                    }
+                }
+            }
+        }
+    }
+    div.end {
+        width: 22%;
+        position: fixed;
+        right: 0;
+        height: 100vh;
+        background: white;
+        box-shadow: 0px 0px 12px rgba(black, .03);
+        padding: 30px 0px 0px 10px;
+        div.search {
+            background: rgba(grey, .05);
+            padding: 8px 5px;
+            width: 90%;
+            border-radius: 5px;
+            @include flex(no);
+            input {
+                background: none;
+                border: none;
+                width: 100%;
+                padding-left: 5px;
+                @include light;
+                @include fsize(5);
+                border: 5px;
+                &:focus {
+                    outline: none;
+                }
+                &::placeholder {
+                    color: rgba(black, .45);
+                    @include fsize(7);
+                }
+            }
+            i {
+                @include fsize(8);
+            }
+        }
+        div.writers {
+            height: 55%;
+            margin-top: 25px;
+            h3 {
+                @include qlight;
+                font-weight: 300;
+                @include fsize(12);
+            }
+            div.images {
+                @include flex(no);
+                flex-wrap: wrap;
+                padding-top: 15px;
+                justify-content: flex-start;
+                div.writer {
+                    margin: 5px 0px;
+                    @include flex(no);
+                    justify-content: space-between;
+                    img {
+                        transform: scale(.8);
+                    }
+                    div.text {
+                        // @include border(green);
+                        width: 52%;
+                        &_header {
+                            @include flex(no);
+                            justify-content: flex-start;
+                            h4 {
+                                a {
+                                    @include link;
+                                    @include light;
+                                    @include fsize(3);
+                                }
+                            }
+                            small {
+                                padding-left: 8px;
+                                a {
+                                    @include link;
+                                    @include light;
+                                    @include purple(.9, c);
+                                    @include fsize(1);
+                                }
+                            }
+                        }
+                        summary {
+                            width: 95%;
+                            @include light;
+                            @include fsize(2);
+                        }
+                    }
+                    div.follow {
+                        width: 28%;
+                        button {
+                            @include button;
+                            @include border(rgba(0, 0, 255, .8));
+                            padding: 7px 10px;
+                            border-radius: 15px;
+                            @include fsize(2);
+                            @include qlight;
+                            cursor: pointer;
+                            @include transition;
+                            &:hover {
+                                transform: translateY(4px);
+                                transform: scale(1.2);
+                                @include purple(.9, b);
+                                border: none;
+                                color: white;
+                            }
+                        }
+                        .active {
+                            border: none;
+                            color: white;
+                            @include purple(.9, b);
+                        }
+                    }
+                }
+            }
+        }
+        div.trend {
+            h3 {
+                @include qlight;
+                font-weight: 300;
+                @include fsize(12);
+                line-height: 50px;
+            }
+            ul.topics {
+                height: auto;
+                @include flex(no);
+                flex-wrap: wrap;
+                // @include border(blue);
+                width: 100%;
+                li {
+                    list-style-type: none;
+                    margin: 7px 3px;
+                    @include bold;
+                    padding: 11px 5px;
+                    @include transition;
+                    cursor: pointer;
+                    border-radius: 5px;
+                    @include fsize(3);
+                    i {
+                        padding-left: 2px;
+                    }
+                    &:first-child {
+                        background: rgba(196, 196, 196, 0.3);
+                    }
+                    &:nth-child(2) {
+                        background: rgba(173, 216, 230, 0.3);
+                    }
+                    &:nth-child(3) {
+                        background: rgba(0, 0, 255, 0.15);
+                    }
+                    &:nth-child(4) {
+                        background: rgba(144, 238, 144, 0.3);
+                    }
+                    &:nth-child(5) {
+                        background: rgba(241, 126, 241, 0.3);
+                    }
+                    &:nth-child(6) {
+                        background: rgba(243, 243, 112, 0.3);
+                    }
+                    &:last-child {
+                        background: rgba(255, 165, 0, 0.2);
+                    }
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
+    }
+}
