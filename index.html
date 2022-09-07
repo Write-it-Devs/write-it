@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=0,maximum-scale=1">
+    <title>Write-it</title>
+    <script src="https://kit.fontawesome.com/01854de2cd.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="./app-assets/images/ico/favicon.ico">
+    <link rel="stylesheet" href="./vendor/aos.css" />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+    <link rel="stylesheet" type="text/css" href="./app-assets/vendors/css/vendors.min.css">
+    <link rel="stylesheet" type="text/css" href="./app-assets/vendors/css/extensions/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="./app-assets/css/core/menu/menu-types/vertical-menu.css">
+    <link rel="stylesheet" type="text/css" href="./app-assets/css/core/colors/palette-gradient.css">
+    <link rel="stylesheet" type="text/css" href="./app-assets/css/plugins/extensions/swiper.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/last1responsive.css">
+    <script src="./vendor/vue.js"></script>
+
+    <script type="text/x-template" id="blog-template">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" v-for="blogpost in fElement" data-aos="zoom-in-up" data-aos-duration="2000">
+                <div class="blogpost">
+                    <div class="blogpost_boxmain">
+                        <div class="image">
+                            <img :src="blogpost.imgLink" :alt="blogpost.header" />
+                        </div>
+                        <div class="text">
+                            <h3> {{ blogpost.header }} </h3>
+                            <p> {{ blogpost.text }} <a :href="blogpost.href">Read more.....</a> </p>
+                        </div>
+                    </div>
+                    <div class="profile">
+                        <div class="image">
+                            <img :src="blogpost.profileImg" :alt="blogpost.profileName" />
+                        </div>
+                        <div class="profile_main">
+                            <h4> {{ blogpost.profileName }} </h4>
+                            <i> {{ blogpost.profileStatus }} </i>
+                            <p> {{ blogpost.readTime }} </p>
+                        </div>
+                        <div class="section">
+                            <button> {{ blogpost.blogType }} </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+</head>
+
+<body id="body">
+    <nav class="mainnav">
+        <header>
+            <h1>Write it</h1>
+        </header>
+        <ul>
+            <li>
+                <button @mouseover="show" @mouseout="hide" class="search">
+                <i class="fas fa-search search" v-if="onlyVisible"></i>
+                <input type="text" placeholder="Search for blogs, niches"  v-if="searchVisible" v-model="blogInput">
+            </button>
+            </li>
+            <li>
+                <button :class="navClass" @click="nav"></button>
+                <div class="nav" v-if="navVisible" v-bind:style="{ zIndex: navIndex }">
+                    <ul>
+                        <li><a href="./index.html#home">Home</a></li>
+                        <li>
+                            <a href="./index.html#about"></i>About</a>
+                        </li>
+                        <li><a href="./index.html#why">Why write it</a></li>
+                        <li>
+                            <a href="./index.html#stats"></i>Stats</a>
+                        </li>
+                        <li>
+                            <a href="./index.html#blogposts"></i> Top Blog Posts</a>
+                        </li>
+                        <li><a href="./index.html#faqs">FAQS</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <div class="text" @click="langList">
+                    <img :src="imgSource" :alt="imgSourceAlt">
+                    <p id="langText">{{ langtext }}</p>
+                    <i :class="langChange"></i>
+                </div>
+                <ul v-if="langVisible" class="langdropdown">
+                    <lang-list :languages="languages" :langtest="changeLanguage"></lang-list>
+                </ul>
+            </li>
+            <li>
+                <a href="./login/index.html">Join Us</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="cover" data-aos="fade-up" data-aos-duration="1000" id="home">
+        <div class="home">
+            <div class="left">
+                <small>People's content</small>
+                <h1>LET REVOLUTIONIZE THE WORLD OF BLOGGING TOGETHER</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita sed in nisi enim inventore possimus magni repellat, obcaecati, ad asperiores aliquid quisquam iure officia,Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
+                    sed in nisi enim inventore possimus magni repellat, obcaecati, ad asperiores aliquid quisquam iure officia</p>
+                <a href="./login/index.html">Join us now</a>
+            </div>
+            <div class="right">
+                <img src="./img/homepage.png" alt="landing">
+            </div>
+        </div>
+    </div>
+    <div class="infoabout" id="about">
+        <div class="infoabout_main">
+            <div class="first" data-aos="fade-down" data-aos-duration="1000">
+                <info-about :infos="infoaboutFirst"></info-about>
+            </div>
+            <div class="second" data-aos="fade-down" data-aos-duration="1000">
+                <info-about :infos="infoaboutSecond"></info-about>
+            </div>
+        </div>
+    </div>
+    <div class="readercause" data-aos="fade-down-right" data-aos-duration="1000">
+        <h2>WHY CHOOSE US</h2>
+        <div class="readercause_main carousel" id="why">
+            <reader-cause :causes="readerReason"></reader-cause>
+        </div>
+    </div>
+    <div class="blogger">
+        <h2 data-aos="fade-down" data-aos-duration="1000">WHY BLOGGING ON WRITE IT ROCKS</h2>
+        <div class="blogger_main" data-aos="fade-down" data-aos-duration="1000">
+            <blog-list :bloggers="bloggers"></blog-list>
+        </div>
+    </div>
+    <div class="move" data-aos="fade-up" data-aos-duration="1000" @click="login">
+        <p id="stats">WRITE-IT IS THE PLACE FOR YOU. JOIN NOW</p>
+    </div>
+    <div class="stats" data-aos="fade-up" data-aos-duration="1000">
+        <div class="stats_main">
+            <div>
+                <h2>10000</h2>
+                <small>Daily blog posts</small>
+            </div>
+            <div>
+                <h2>4800000</h2>
+                <small>Daily blog readers</small>
+            </div>
+            <div>
+                <h2>500000</h2>
+                <small>Bloggers</small>
+            </div>
+        </div>
+    </div>
+    <section id="component-swiper-multi-row" class="blogpost">
+        <div class="card ">
+            <div class="card-header">
+                <h4 class="card-title" data-aos="zoom-in-up" data-aos-duration="2000" id="blogposts">TOP BLOG POSTS FOR THE DAY</h4>
+            </div>
+            <div class="card-content">
+                <div class="card-body">
+                    <div class="swiper-multi-row swiper-container">
+                        <blog-post :entries="blogPosts" :filter-Key="blogInput"></blog-post>
+                        <!-- Add Pagination -->
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="faq" id="faqs">
+        <div class="image" data-aos="fade-up" data-aos-duration="2000">
+            <img src="./img/faqimg.png" alt="FAQ">
+        </div>
+        <faq-questions :faqs="faqs"></faq-questions>
+    </div>
+    <footer>
+        <div class="footer_main" data-aos="fade-down" data-aos-duration="2000">
+            <div>
+                <h4>Write-it</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae itaque assumenda hic amet placeat veniam voluptas, aspernatur delectus fuga minus rerum officia dolor. placeat veniam voluptas, aspernatur delectus fuga minus rerum officia
+                    dolor.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae itaque assumenda hic amet</p>
+                <div class="links">
+                    <a class="fab fa-facebook" href="#"></a>
+                    <a class="fab fa-twitter" href="#"></a>
+                    <a class="fab fa-linkedin" href="#"></a>
+                </div>
+            </div>
+            <div>
+                <h4>NAVIGATION</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Why write-it</a></li>
+                    <li><a href="#">Stats</a></li>
+                    <li><a href="#">Top Blog posts</a></li>
+                    <li><a href="#">FAQS</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>CONTACT US</h4>
+                <ul>
+                    <li><a href="#"><i class="fas fa-envelope"></i>inquiry@writeit.com</a></li>
+                    <li><a href="#"><i class="fas fa-phone"></i>+234 9054050533</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer_bottom" data-aos="fade-down" data-aos-duration="2000">
+            <h4 class="date"></h4>
+            <ul>
+                <li><a href="#">Terms of Use</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Code of conduct</a></li>
+            </ul>
+        </div>
+    </footer>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
+    <script src="./js/script.js"></script>
+    <script src="./js/node.js"></script>
+    <script src="./vendor/aos.js"></script>
+    <script src="./app-assets/vendors/js/vendors.min.js"></script>
+    <script src="./app-assets/vendors/js/extensions/swiper.min.js"></script>
+    <script src="./app-assets/js/core/app-menu.js"></script>
+    <script src="./app-assets/js/core/app.js"></script>
+    <script src="./app-assets/js/scripts/components.js"></script>
+    <script src="./app-assets/js/scripts/extensions/swiper.js"></script>
+    <script>
+        AOS.init();
+        $(document).ready(function() {
+            $('.carousel').carousel();
+        });
+    </script>
+    <!-- END: Page JS-->
+</body>
+
+</html>

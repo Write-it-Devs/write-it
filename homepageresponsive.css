@@ -1,0 +1,435 @@
+@media screen and (min-width: 0px) and (max-width: 425px) {
+    div.whole div.left {
+        position: relative;
+        width: 100%;
+        height: 11vh;
+        display: block;
+        padding: 0px 4px;
+    }
+    div.whole div.left div.leftnav {
+        height: 10vh;
+        display: flex;
+        justify-content: space-between;
+    }
+    div.whole div.left div.leftnav div.avatar,
+    div.whole div.left div.leftnav div.state {
+        padding: 0;
+        display: flex;
+        width: 20%;
+        height: 8vh;
+    }
+    div.whole div.left div.leftnav div.bars {
+        display: block;
+        height: auto;
+        width: auto;
+    }
+    div.whole div.left div.leftnav div.bars div.one,
+    div.whole div.left div.leftnav div.bars div.two,
+    div.whole div.left div.leftnav div.bars div.three,
+    div.whole div.left div.leftnav div.bars div.four {
+        height: 4px;
+        width: 10vw;
+    }
+    div.whole div.left div.leftnav div.bars div.two {
+        width: 6vw;
+    }
+    div.whole div.left div.leftnav div.bars div.one,
+    div.whole div.left div.leftnav div.bars div.three {
+        width: 4vw;
+    }
+    div.whole div.right {
+        position: relative;
+        left: 0%;
+        width: 100%;
+    }
+    div.whole div.right div.iconses {
+        display: none;
+    }
+    div.whole div.right nav.navlist {
+        display: none;
+    }
+    div.mains div.box {
+        padding: 2%;
+    }
+    div.mains div.box div.boxleft,
+    div.mains div.box div.boxright {
+        width: 100%;
+    }
+    div.mains div.box div.boxleft div.boxup,
+    div.mains div.box div.boxleft div.boxdown,
+    div.mains div.box div.boxright div.boxup,
+    div.mains div.box div.boxright div.boxdown {
+        padding: 3%;
+        margin: 0%;
+    }
+    div.mains div.box div.boxleft div.boxup div.topnav div.postname,
+    div.mains div.box div.boxleft div.boxup div.topnav div.posttime,
+    div.mains div.box div.boxleft div.boxdown div.topnav div.postname,
+    div.mains div.box div.boxleft div.boxdown div.topnav div.posttime,
+    div.mains div.box div.boxright div.boxup div.topnav div.postname,
+    div.mains div.box div.boxright div.boxup div.topnav div.posttime,
+    div.mains div.box div.boxright div.boxdown div.topnav div.postname,
+    div.mains div.box div.boxright div.boxdown div.topnav div.posttime {
+        font-size: larger;
+        font-weight: bolder;
+    }
+    div.mains div.box div.boxleft div.boxup div.content div.postcontent article,
+    div.mains div.box div.boxleft div.boxdown div.content div.postcontent article,
+    div.mains div.box div.boxright div.boxup div.content div.postcontent article,
+    div.mains div.box div.boxright div.boxdown div.content div.postcontent article {
+        font-size: 0.9em;
+    }
+}
+
+@media screen and (min-width: 425px) and (max-width: 548px) {
+    div.whole div.left {
+        position: relative;
+        width: 100%;
+        height: 11vh;
+        display: block;
+        padding: 0px 4px;
+    }
+    div.whole div.left div.leftnav {
+        height: 10vh;
+        display: flex;
+        justify-content: space-between;
+    }
+    div.whole div.left div.leftnav div.avatar,
+    div.whole div.left div.leftnav div.state {
+        padding: 0;
+        display: flex;
+        width: 16%;
+        height: 6vh;
+    }
+    div.whole div.left div.leftnav div.bars {
+        display: block;
+        height: auto;
+        width: auto;
+    }
+    div.whole div.left div.leftnav div.bars div.one,
+    div.whole div.left div.leftnav div.bars div.two,
+    div.whole div.left div.leftnav div.bars div.three,
+    div.whole div.left div.leftnav div.bars div.four {
+        height: 4px;
+        width: 10vw;
+    }
+    div.whole div.left div.leftnav div.bars div.two {
+        width: 6vw;
+    }
+    div.whole div.left div.leftnav div.bars div.one,
+    div.whole div.left div.leftnav div.bars div.three {
+        width: 4vw;
+    }
+    div.whole div.right {
+        position: relative;
+        left: 0%;
+        width: 100%;
+    }
+    div.whole div.right div.iconses {
+        display: none;
+    }
+    div.whole div.right nav.navlist {
+        display: none;
+    }
+    div.mains div.box {
+        padding: 2%;
+    }
+    div.mains div.box div.boxleft,
+    div.mains div.box div.boxright {
+        width: 100%;
+    }
+    div.mains div.box div.boxleft div.boxup,
+    div.mains div.box div.boxleft div.boxdown,
+    div.mains div.box div.boxright div.boxup,
+    div.mains div.box div.boxright div.boxdown {
+        padding: 3%;
+        margin: 0%;
+    }
+    div.mains div.box div.boxleft div.boxup div.topnav div.postname,
+    div.mains div.box div.boxleft div.boxup div.topnav div.posttime,
+    div.mains div.box div.boxleft div.boxdown div.topnav div.postname,
+    div.mains div.box div.boxleft div.boxdown div.topnav div.posttime,
+    div.mains div.box div.boxright div.boxup div.topnav div.postname,
+    div.mains div.box div.boxright div.boxup div.topnav div.posttime,
+    div.mains div.box div.boxright div.boxdown div.topnav div.postname,
+    div.mains div.box div.boxright div.boxdown div.topnav div.posttime {
+        font-size: larger;
+        font-weight: bolder;
+    }
+    div.mains div.box div.boxleft div.boxup div.content div.postcontent article,
+    div.mains div.box div.boxleft div.boxdown div.content div.postcontent article,
+    div.mains div.box div.boxright div.boxup div.content div.postcontent article,
+    div.mains div.box div.boxright div.boxdown div.content div.postcontent article {
+        font-size: 0.95em;
+    }
+}
+
+@media screen and (min-width: 549px) and (max-width: 648px) {
+    div.whole div.left {
+        position: relative;
+        width: 100%;
+        height: 11vh;
+        display: block;
+        padding: 2px 4px 0px 4px;
+    }
+    div.whole div.left div.leftnav {
+        height: 10vh;
+        display: flex;
+        justify-content: space-between;
+    }
+    div.whole div.left div.leftnav div.avatar,
+    div.whole div.left div.leftnav div.state {
+        padding: 0;
+        display: flex;
+        width: 16%;
+        height: 7.5vh;
+    }
+    div.whole div.left div.leftnav div.bars {
+        display: block;
+        height: auto;
+        width: auto;
+    }
+    div.whole div.left div.leftnav div.bars div.one,
+    div.whole div.left div.leftnav div.bars div.two,
+    div.whole div.left div.leftnav div.bars div.three,
+    div.whole div.left div.leftnav div.bars div.four {
+        height: 4px;
+        width: 10vw;
+    }
+    div.whole div.left div.leftnav div.bars div.two {
+        width: 6vw;
+    }
+    div.whole div.left div.leftnav div.bars div.one,
+    div.whole div.left div.leftnav div.bars div.three {
+        width: 4vw;
+    }
+    div.whole div.right {
+        position: relative;
+        left: 0%;
+        width: 100%;
+    }
+    div.whole div.right div.iconses {
+        display: none;
+    }
+    div.whole div.right nav.navlist {
+        display: none;
+    }
+    div.mains div.box {
+        padding: 2%;
+    }
+    div.mains div.box div.boxleft,
+    div.mains div.box div.boxright {
+        width: 100%;
+    }
+    div.mains div.box div.boxleft div.boxup,
+    div.mains div.box div.boxleft div.boxdown,
+    div.mains div.box div.boxright div.boxup,
+    div.mains div.box div.boxright div.boxdown {
+        padding: 3%;
+        margin: 0%;
+    }
+    div.mains div.box div.boxleft div.boxup div.topnav div.postname,
+    div.mains div.box div.boxleft div.boxup div.topnav div.posttime,
+    div.mains div.box div.boxleft div.boxdown div.topnav div.postname,
+    div.mains div.box div.boxleft div.boxdown div.topnav div.posttime,
+    div.mains div.box div.boxright div.boxup div.topnav div.postname,
+    div.mains div.box div.boxright div.boxup div.topnav div.posttime,
+    div.mains div.box div.boxright div.boxdown div.topnav div.postname,
+    div.mains div.box div.boxright div.boxdown div.topnav div.posttime {
+        font-size: larger;
+        font-weight: bolder;
+    }
+    div.mains div.box div.boxleft div.boxup div.content div.postcontent article,
+    div.mains div.box div.boxleft div.boxdown div.content div.postcontent article,
+    div.mains div.box div.boxright div.boxup div.content div.postcontent article,
+    div.mains div.box div.boxright div.boxdown div.content div.postcontent article {
+        font-size: 0.97em;
+    }
+}
+
+@media screen and (min-width: 649px) and (max-width: 798px) {
+    div.whole div.left {
+        position: relative;
+        width: 100%;
+        height: 11vh;
+        display: block;
+        padding: 4px 4px 0px 4px;
+    }
+    div.whole div.left div.leftnav {
+        height: 10vh;
+        display: flex;
+        justify-content: space-between;
+    }
+    div.whole div.left div.leftnav div.avatar,
+    div.whole div.left div.leftnav div.state {
+        padding: 0;
+        display: flex;
+        width: 20%;
+        height: 10vh;
+    }
+    div.whole div.left div.leftnav div.bars {
+        display: block;
+        height: auto;
+        width: auto;
+    }
+    div.whole div.left div.leftnav div.bars div.one,
+    div.whole div.left div.leftnav div.bars div.two,
+    div.whole div.left div.leftnav div.bars div.three,
+    div.whole div.left div.leftnav div.bars div.four {
+        height: 4px;
+        width: 10vw;
+    }
+    div.whole div.left div.leftnav div.bars div.two {
+        width: 6vw;
+    }
+    div.whole div.left div.leftnav div.bars div.one,
+    div.whole div.left div.leftnav div.bars div.three {
+        width: 4vw;
+    }
+    div.whole div.right {
+        position: relative;
+        left: 0%;
+        width: 100%;
+    }
+    div.mains div.box div.boxleft div.boxup div.content div.postcontent article,
+    div.mains div.box div.boxleft div.boxdown div.content div.postcontent article,
+    div.mains div.box div.boxright div.boxup div.content div.postcontent article,
+    div.mains div.box div.boxright div.boxdown div.content div.postcontent article {
+        font-size: 0.98em;
+    }
+}
+
+
+@media screen and (min-width: 799px) and (max-width: 1024px) {
+    div.whole div.left div.leftnav {
+        height: inherit;
+        width: inherit;
+        display: block;
+        justify-content: center;
+        align-items: center;
+    }
+    div.whole div.left div.leftnav div.avatar,
+    div.whole div.left div.leftnav div.state {
+        padding: 0;
+        height: 5vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    div.whole div.left div.leftnav div.avatar img,
+    div.whole div.left div.leftnav div.state img {
+        border-radius: 50%;
+        height: 100%;
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    div.whole div.left div.leftnav div.bars {
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    div.whole div.left div.leftnav div.bars div.one,
+    div.whole div.left div.leftnav div.bars div.two,
+    div.whole div.left div.leftnav div.bars div.three,
+    div.whole div.left div.leftnav div.bars div.four {
+        height: 3px;
+        width: 20%;
+        margin: 3px 0px 0px 0px;
+        display: block;
+        background-color: black;
+    }
+    div.whole div.left div.leftnav div.bars div.two,
+    div.whole div.left div.leftnav div.bars div.three {
+        width: 45%;
+    }
+    div.mains div.box div.boxleft div.boxup div.content div.postcontent article,
+    div.mains div.box div.boxleft div.boxdown div.content div.postcontent article,
+    div.mains div.box div.boxright div.boxup div.content div.postcontent article,
+    div.mains div.box div.boxright div.boxdown div.content div.postcontent article {
+        font-size: 1em;
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1098px) {
+    div.whole div.left div.leftnav div.avatar,
+    div.whole div.left div.leftnav div.state {
+        height: 7%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5%;
+    }
+}
+
+@media screen and (min-width: 1099px) and (max-width: 1298px) {
+    div.whole div.left div.leftnav div.avatar,
+    div.whole div.left div.leftnav div.state {
+        height: 7%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5%;
+    }
+}
+
+@media screen and (min-width: 2000px) and (max-width: 2300px) {
+    div.whole div.left {
+        width: 7vw;
+    }
+    div.whole div.left div.leftnav div.bars div.one,
+    div.whole div.left div.leftnav div.bars div.two,
+    div.whole div.left div.leftnav div.bars div.three,
+    div.whole div.left div.leftnav div.bars div.four {
+        height: 7px;
+    }
+    div.whole div.right {
+        width: 92vw;
+        left: 8%;
+    }
+    div.whole div.right div.iconses div.search i {
+        font-size: 2.7em;
+    }
+    div.whole div.right div.iconses div.search input[type="search"] {
+        font-size: 2em;
+    }
+    div.whole div.right div.iconses div.notifications p {
+        font-size: 2em;
+    }
+    div.whole div.right div.iconses div.notifications i {
+        font-size: 2.7em;
+    }
+    div.whole div.right div.iconses div.settings i {
+        font-size: 2.7em;
+    }
+    div.whole div.right nav.navlist ul li {
+        font-size: 2.5em;
+    }
+    div.mains div.box div.boxleft div.boxup div.topnav div.postavatar img,
+    div.mains div.box div.boxright div.boxup div.topnav div.postavatar img,
+    div.mains div.box div.boxleft div.boxdown div.topnav div.postavatar img,
+    div.mains div.box div.boxright div.boxdown div.topnav div.postavatar img {
+        height: 90px;
+    }
+    div.mains div.box div.boxleft div.boxup div.topnav div.postname,
+    div.mains div.box div.boxleft div.boxup div.topnav div.posttime,
+    div.mains div.box div.boxleft div.boxdown div.topnav div.postname,
+    div.mains div.box div.boxleft div.boxdown div.topnav div.posttime,
+    div.mains div.box div.boxright div.boxup div.topnav div.postname,
+    div.mains div.box div.boxright div.boxup div.topnav div.posttime,
+    div.mains div.box div.boxright div.boxdown div.topnav div.postname,
+    div.mains div.box div.boxright div.boxdown div.topnav div.posttime {
+        font-size: 2.5em;
+        font-weight: bold;
+    }
+    div.mains div.box div.boxleft div.boxup div.content div.postcontent article,
+    div.mains div.box div.boxleft div.boxdown div.content div.postcontent article,
+    div.mains div.box div.boxright div.boxup div.content div.postcontent article,
+    div.mains div.box div.boxright div.boxdown div.content div.postcontent article {
+        font-size: 2em;
+    }
+}

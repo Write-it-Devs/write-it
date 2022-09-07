@@ -1,0 +1,15 @@
+{
+    "name": "write-it",
+    "version": "1.0.0",
+    "description": "revolution of blogging",
+    "main": "index.html",
+    "scripts": {
+        "node:sass": "node-sass css/sass/main.scss css/style.css",
+        "auto:compile": "nodemon -e scss -x \"npm run node:sass\""
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "node-sass": "^6.0.1"
+    }
+}
